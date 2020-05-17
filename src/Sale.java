@@ -24,6 +24,10 @@ public class Sale {
 
     private void findPriceThenDisplayPrice(String barcode) {
         final String priceAsText = findPrice(barcode);
+        displayPrice(priceAsText);
+    }
+
+    private void displayPrice(String priceAsText) {
         display.setText(priceAsText);
     }
 
