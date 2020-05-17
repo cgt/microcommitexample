@@ -19,8 +19,12 @@ public class Sale {
         if (pricesByBarcode.containsKey(barcode))
             display.setText(pricesByBarcode.get(barcode));
         else
-            display.setText("Product not found for "
-                + barcode);
+            displayProductNotFoundMessage(barcode);
+    }
+
+    private void displayProductNotFoundMessage(String barcode) {
+        display.setText("Product not found for "
+            + barcode);
     }
 
     private void displayEmptyBarcodeMessage() {
