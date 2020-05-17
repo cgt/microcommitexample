@@ -1,10 +1,12 @@
 import java.util.Map;
 
 public class Sale {
+    private Catalog catalog;
     private Display display;
     private Map<String, String> pricesByBarcode;
 
     public Sale(Catalog catalog, Display display) {
+        this.catalog = catalog;
         this.display = display;
         this.pricesByBarcode = catalog.getPricesByBarcode();
     }
