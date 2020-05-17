@@ -18,16 +18,12 @@ public class Sale {
             return;
         }
 
-        final String priceAsText = findPrice(barcode);
+        final String priceAsText = catalog.findPrice(barcode);
         if (priceAsText == null) {
             display.displayProductNotFoundMessage(barcode);
         } else {
             display.displayPrice(priceAsText);
         }
-    }
-
-    private String findPrice(String barcode) {
-        return pricesByBarcode.get(barcode);
     }
 
     private static class Catalog {
@@ -39,6 +35,10 @@ public class Sale {
 
         public Map<String, String> getPricesByBarcode() {
             return pricesByBarcode;
+        }
+
+        public String findPrice(String barcode) {
+            return pricesByBarcode.get(barcode);
         }
     }
 }
