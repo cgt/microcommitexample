@@ -16,10 +16,14 @@ public class Sale {
             return;
         }
 
-        if (pricesByBarcode.containsKey(barcode))
-            display.setText(pricesByBarcode.get(barcode));
-        else
+        if (pricesByBarcode.containsKey(barcode)) {
+            displayPrice(barcode);
+        } else
             displayProductNotFoundMessage(barcode);
+    }
+
+    private void displayPrice(String barcode) {
+        display.setText(pricesByBarcode.get(barcode));
     }
 
     private void displayProductNotFoundMessage(String barcode) {
