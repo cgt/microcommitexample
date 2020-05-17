@@ -23,8 +23,7 @@ public class Sale {
     }
 
     private void findPriceThenDisplayPrice(String barcode) {
-        final String priceAsText = findPrice(barcode);
-        displayPrice(priceAsText);
+        displayPrice(findPrice(barcode));
     }
 
     private void displayPrice(String priceAsText) {
