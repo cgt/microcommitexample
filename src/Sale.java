@@ -17,7 +17,7 @@ public class Sale {
         }
 
         final String priceAsText = findPrice(barcode);
-        if (!pricesByBarcode.containsKey(barcode)) {
+        if (priceAsText == null) {
             displayProductNotFoundMessage(barcode);
         } else {
             displayPrice(priceAsText);
