@@ -16,10 +16,10 @@ public class Sale {
             return;
         }
 
+        final String priceAsText = findPrice(barcode);
         if (!pricesByBarcode.containsKey(barcode)) {
             displayProductNotFoundMessage(barcode);
         } else {
-            final String priceAsText = findPrice(barcode);
             displayPrice(priceAsText);
         }
     }
