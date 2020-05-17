@@ -4,9 +4,9 @@ public class Sale {
     private Display display;
     private Map<String, String> pricesByBarcode;
 
-    public Sale(Map<String, String> pricesByBarcode, Display display) {
+    public Sale(Catalog catalog, Display display) {
         this.display = display;
-        this.pricesByBarcode = pricesByBarcode;
+        this.pricesByBarcode = catalog.getPricesByBarcode();
     }
 
     public void onBarcode(String barcode) {
@@ -28,4 +28,15 @@ public class Sale {
         return pricesByBarcode.get(barcode);
     }
 
+    private static class Catalog {
+        private final Map<String, String> pricesByBarcode;
+
+        private Catalog(Map<String, String> pricesByBarcode) {
+            this.pricesByBarcode = pricesByBarcode;
+        }
+
+        public Map<String, String> getPricesByBarcode() {
+            return pricesByBarcode;
+        }
+    }
 }
