@@ -18,7 +18,7 @@ public class Sale {
 
         final String priceAsText = findPrice(barcode);
         if (priceAsText == null) {
-            displayProductNotFoundMessage(barcode);
+            display.displayProductNotFoundMessage(barcode);
         } else {
             display.displayPrice(priceAsText);
         }
@@ -26,11 +26,6 @@ public class Sale {
 
     private String findPrice(String barcode) {
         return pricesByBarcode.get(barcode);
-    }
-
-    private void displayProductNotFoundMessage(String barcode) {
-        display.setText("Product not found for "
-            + barcode);
     }
 
     private void displayEmptyBarcodeMessage() {
