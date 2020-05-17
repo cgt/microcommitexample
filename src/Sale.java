@@ -23,7 +23,8 @@ public class Sale {
     }
 
     private void findPriceThenDisplayPrice(String barcode) {
-        display.setText(pricesByBarcode.get(barcode));
+        final String priceAsText = pricesByBarcode.get(barcode);
+        display.setText(priceAsText);
     }
 
     private void displayProductNotFoundMessage(String barcode) {
