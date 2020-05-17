@@ -20,12 +20,8 @@ public class Sale {
         if (priceAsText == null) {
             displayProductNotFoundMessage(barcode);
         } else {
-            displayPrice(priceAsText);
+            display.displayPrice(priceAsText);
         }
-    }
-
-    private void displayPrice(String priceAsText) {
-        display.setText(priceAsText);
     }
 
     private String findPrice(String barcode) {
