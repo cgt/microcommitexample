@@ -11,4 +11,8 @@ public class Display {
         setText("Product not found for "
             + barcode);
     }
+
+    public void displayEmptyBarcodeMessage() {
+        setText("Scanning error: empty barcode");
+    }
 }

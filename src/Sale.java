@@ -12,7 +12,7 @@ public class Sale {
     public void onBarcode(String barcode) {
         // SMELL Refused bequest: move this up the call stack?
         if ("".equals(barcode)) {
-            displayEmptyBarcodeMessage();
+            display.displayEmptyBarcodeMessage();
             return;
         }
 
@@ -28,7 +28,4 @@ public class Sale {
         return pricesByBarcode.get(barcode);
     }
 
-    private void displayEmptyBarcodeMessage() {
-        display.setText("Scanning error: empty barcode");
-    }
 }
